@@ -1,16 +1,14 @@
 /*
-This script creates table and bronze schema, dropping existing table and bronze schema if they already exist
+BEFORE USE THIS SCRIPT YOU MUST CREATE SCHEMA NAME BRONZE
+HOW TO CREATE: CREATE SCHEMA bronze
+You just need create this schema one time
+
+This script creates table , dropping existing table if they already exist
 Run this script to re-define DDL structure of "bronze" table
 */
 
 if object_id('bronze.amazon_sale_report','U') is not null
 	drop table bronze.amazon_sale_report
-go
-if SCHEMA_ID('bronze') is not null
-	drop schema bronze 
-
-go
-create schema bronze
 create table bronze.amazon_sale_report(
 	idx int,
 	order_id varchar(50),
