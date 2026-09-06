@@ -14,3 +14,5 @@ begin
 		tablock
 	)
 end
+
+exec bronze.loading_bronze
